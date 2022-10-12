@@ -374,6 +374,7 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      roboto:'Roboto'
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
