@@ -7,7 +7,17 @@
             <MovieBox v-for="data in movieList" :key="data.id" :genre-list="genreList" :movie-data="data"
                 class="w-1/3" />
         </div>
-        
+        <div class="flex flex-col items-center justify-center mt-20 mb-16">
+            <div class="flex items-center justify-center divide-slate-600 divide-x">
+                <p @click="prevPage" :class="currentPage > 1 ?'text-blue-500 cursor-pointer' : ''"
+                    class="mr-5 text-slate-500 font-bold">Previous Page</p>
+                <p @click="nextPage" :class="currentPage < totalPage ?'text-blue-500 cursor-pointer' : ''"
+                    class="pl-5  text-slate-500 font-bold">Next Page</p>
+            </div>
+            <div>
+                <p class="text-neutral-500 mt-6">Showing results {{startResultNumber}}-{{endResultNumber}}</p>
+            </div>
+        </div>
     </div>
 </template>
 
