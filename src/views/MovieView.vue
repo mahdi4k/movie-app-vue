@@ -72,7 +72,7 @@
             <div class="mt-16">
                 <p>{{movieInfo.overview}}</p>
             </div>
-            <div class="mt-32">
+            <div class="my-32">
                 <p class="text-[18px] font-bold ml-1">Credit:</p>
                 <div class="flex mt-3">
                     <p class="credit-movie" v-for="item in movieCredit" :key="item.id">
