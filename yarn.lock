@@ -1447,7 +1447,7 @@
     "webpack" "^5.54.0"
     "yorkie" "^2.0.0"
 
-"@vue/cli-plugin-router@^5.0.8":
+"@vue/cli-plugin-router@^5.0.8", "@vue/cli-plugin-router@~5.0.0":
   "integrity" "sha512-Gmv4dsGdAsWPqVijz3Ux2OS2HkMrWi1ENj2cYL75nUeL+Xj5HEstSqdtfZ0b1q9NCce+BFB6QnHfTBXc/fCvMg=="
   "resolved" "https://registry.npmjs.org/@vue/cli-plugin-router/-/cli-plugin-router-5.0.8.tgz"
   "version" "5.0.8"
@@ -4216,6 +4216,11 @@
   "resolved" "https://registry.npmjs.org/module-alias/-/module-alias-2.2.2.tgz"
   "version" "2.2.2"
 
+"moment@^2.29.4":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
+
 "mrmime@^1.0.0":
   "integrity" "sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw=="
   "resolved" "https://registry.npmjs.org/mrmime/-/mrmime-1.0.1.tgz"
@@ -5972,6 +5977,18 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
+"vue-router@^3.5.1":
+  "integrity" "sha512-VYXZQLtjuvKxxcshuRAwjHnciqZVoXAjTjcqBTz4rKc8qih9g9pI3hbDjmqXaHdgL3v8pV6P8Z335XvHzESxLQ=="
+  "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.6.5.tgz"
+  "version" "3.6.5"
+
+"vue-star-rating@^1.7.0":
+  "integrity" "sha512-2qdONqnIlvFzJoallfr7VuFRB6hBzYgBVEbXC3yYZz2TfMhx36WtYQ5p7JRjW+pzZx2PGQYZ75UFoBE0jwIANw=="
+  "resolved" "https://registry.npmjs.org/vue-star-rating/-/vue-star-rating-1.7.0.tgz"
+  "version" "1.7.0"
+  dependencies:
+    "vue" "^2.3.3"
+
 "vue-style-loader@^4.1.0", "vue-style-loader@^4.1.3":
   "integrity" "sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg=="
   "resolved" "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-4.1.3.tgz"
@@ -5993,13 +6010,20 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2 || ^3.2.13", "vue@^2.6.14":
+"vue@*", "vue@^2 || ^3.2.13", "vue@^2.3.3", "vue@^2.6.10", "vue@^2.6.14":
   "integrity" "sha512-VPAW5QelT7Tx6UoSw/cwx/jDROOKAK1y/Q0o7HkmVJ1WAypE7w1+UoFa+KsGxy1aYdHPU1oODB3vR6XwSfVhDg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.11.tgz"
   "version" "2.7.11"
   dependencies:
     "@vue/compiler-sfc" "2.7.11"
     "csstype" "^3.1.0"
+
+"vue2-daterange-picker@^0.6.8":
+  "integrity" "sha512-8/YnxpInyYgjfpffxMP06UaPFYEiXATMq2WcO568fv5BNJQNffMQoBCswwxcma4exW+FrbqQUWQCdTRPtKDrNw=="
+  "resolved" "https://registry.npmjs.org/vue2-daterange-picker/-/vue2-daterange-picker-0.6.8.tgz"
+  "version" "0.6.8"
+  dependencies:
+    "vue" "^2.6.10"
 
 "watchpack@^2.4.0":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="
