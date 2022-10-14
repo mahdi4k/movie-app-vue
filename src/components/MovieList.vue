@@ -9,9 +9,9 @@
         </div>
         <div class="flex flex-col items-center justify-center mt-20 mb-16">
             <div class="flex items-center justify-center divide-slate-600 divide-x">
-                <p @click="prevPage" :class="currentPage > 1 ?'text-blue-500 cursor-pointer' : ''"
+                <p @click="prevPage" :class="currentPage > 1 ?'!text-blue-500 cursor-pointer' : ''"
                     class="mr-5 text-slate-500 font-bold">Previous Page</p>
-                <p @click="nextPage" :class="currentPage < totalPage ?'text-blue-500 cursor-pointer' : ''"
+                <p @click="nextPage" :class="currentPage < totalPage ?'!text-blue-500 cursor-pointer' : ''"
                     class="pl-5  text-slate-500 font-bold">Next Page</p>
             </div>
             <div>
@@ -24,6 +24,7 @@
 <script>
 import MovieBox from '@/components/MovieBox.vue'
 import { HTTP } from '../http-common';
+import { bus } from '../main';
 
 export default {
     components: { MovieBox },
@@ -40,15 +41,19 @@ export default {
         }
     },
     mounted() {
-        this.getMoveList()
+        this.getMovieList()
         this.getGenreList()
+        bus.$on('date', (data) => {
+            this.getMovieList('',data)
+        })
     },
     methods: {
-        getMoveList(pageNumber) {
+        getMovieList(pageNumber,filter) {
             this.loading = true
-            let page = pageNumber ? `?page=${pageNumber}` : '';
+            let page = pageNumber ? `page=${pageNumber}` : '';
+            let filterDate = filter ? `&release_date.gte=${filter.startDate}&release_date.lte=${filter.endDate}` : ''
             this.scrollToTop();
-            HTTP.get(`/discover/movie${page}`)
+            HTTP.get(`/discover/movie?${page}${filterDate}`)
                 .then(response => {
                     this.loading = false;
                     this.movieList = response.data.results;
@@ -76,7 +81,7 @@ export default {
                 let pervPage = Number(this.currentPage) - 1
                 this.startResultNumber = Number(this.startResultNumber) - Number(this.totalRow)
                 this.endResultNumber = Number(this.endResultNumber) - Number(this.totalRow)
-                this.getMoveList(pervPage)
+                this.getMovieList(pervPage)
             }
         },
         nextPage() {
@@ -84,7 +89,7 @@ export default {
                 let nextPage = Number(this.currentPage) + 1
                 this.startResultNumber = this.startResultNumber + this.totalRow
                 this.endResultNumber = this.endResultNumber + this.totalRow
-                this.getMoveList(nextPage)
+                this.getMovieList(nextPage)
             }
         }
     }
